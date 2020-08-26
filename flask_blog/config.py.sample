@@ -2,4 +2,6 @@ DEBUG = True
 USERNAME = ''
 PASSWORD = ''
 
+SQLALCHEMY_DATABASE_URI = 'sqlite:///flask_blog.db'
+
 SECRET_KEY = 'ランダムな文字列'
