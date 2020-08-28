@@ -5,3 +5,5 @@ PASSWORD = ''
 SQLALCHEMY_DATABASE_URI = 'sqlite:///flask_blog.db'
 
 SECRET_KEY = 'ランダムな文字列'
+
+SQLALCHEMY_TRACK_MODIFICATIONS = False

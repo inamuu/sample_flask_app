@@ -8,7 +8,7 @@ class Entry(db.Model):
     text = db.Column(db.Text)
     created_at = db.Column(db.DateTime)
 
-    def __init__(self, title=None, text=Nonte):
+    def __init__(self, title=None, text=None):
         self.title = title
         self.text = text
         self.created_at = datetime.utcnow()
