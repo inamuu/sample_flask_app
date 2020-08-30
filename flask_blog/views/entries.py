@@ -10,6 +10,12 @@ def show_entries():
     entries = Entry.query.order_by(Entry.id.desc()).all()
     return render_template('entries/index.html', entries=entries)
 
+@app.route("/entries/new", methods=['GET'])
+def new_entry():
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+    return render_template('entries/new.html')
+
 @app.route("/entries", methods=['POST'])
 def add_entry():
     if not session.get('logged_in'):
@@ -24,9 +30,3 @@ def add_entry():
     db.session.commit()
     flash('新しい記事が投稿されました')
     return redirect(url_for('show_entries'))
-
-@app.route("/entries/new", methods=['GET'])
-def new_entry():
-    if not session.get('logged_in'):
-        return redirect(url_for('login'))
-    return render_template('entries/new.html')
