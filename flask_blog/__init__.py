@@ -6,7 +6,7 @@ app.config.from_object('flask_blog.config')
 
 db = SQLAlchemy(app)
 
-import flask_blog.views
+from flask_blog.views import views, entries
 
 
 """
@@ -17,6 +17,7 @@ from datetime import datetime
 
 class Entry(db.Model):
     __tablename__ = 'entries'
+    __table_args__ = {'extend_existing': True}
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50), unique=True)
     text = db.Column(db.Text)
