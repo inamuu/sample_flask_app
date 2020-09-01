@@ -1,5 +1,5 @@
 from flask import request, redirect, url_for, render_template, flash, session
-from flask_blog import app
+from flask import current_app as app
 from functools import wraps
 from flask import Blueprint
 
@@ -33,6 +33,6 @@ def logout():
     flash('ログアウトしました。')
     return redirect(url_for('entry.show_entries'))
 
-@app.errorhandler(404)
+@view.app_errorhandler(404)
 def non_existant_route(error):
     return redirect(url_for('view.login'))
