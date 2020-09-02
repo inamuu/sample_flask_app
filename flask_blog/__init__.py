@@ -6,6 +6,9 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
     app.config.from_object('flask_blog.config')
+    if test_config:
+        app.config.form_mapping(test_config)
+
     db.init_app(app)
 
 
