@@ -21,6 +21,13 @@ pip install -U pip
 pip install -r requirements.txt
 ```
 
+## How to Run server
+
+```sh
+FLASK_APP=flask_blog
+flask run
+```
+
 ## UnitTest
 
 ```sh
