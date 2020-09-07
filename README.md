@@ -58,3 +58,9 @@ flask_blog/views/views.py         32      1    97%   38
 TOTAL                            126     27    79%
 
 ```
+
+Export coverage results to html files
+
+```sh
+coverage html
+```
